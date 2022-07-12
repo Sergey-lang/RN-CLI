@@ -2,6 +2,7 @@ import {Text, View, StyleSheet, Image, TextInput, Alert} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import CustomButton from '../components/CustomButton';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import PushNotification from 'react-native-push-notification';
 
 const Login = ({navigation}) => {
   const [name, setName] = useState('');
@@ -18,6 +19,13 @@ const Login = ({navigation}) => {
     }
   };
 
+  const createChannels = () => {
+    PushNotification.createChannel({
+      channelId: 'test-channel',
+      channelName: 'Test Channel',
+    });
+  };
+
   const getData = async () => {
     try {
       const value = await AsyncStorage.getItem('UserName');
@@ -31,6 +39,7 @@ const Login = ({navigation}) => {
 
   useEffect(() => {
     getData();
+    createChannels();
   }, []);
 
   return (

@@ -1,7 +1,16 @@
-import {Alert, StyleSheet, Text, TextInput, View} from 'react-native';
+import {
+  Alert,
+  FlatList,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import CustomButton from '../components/CustomButton';
+import PushNotification from 'react-native-push-notification';
 
 const Home = ({navigation}) => {
   const [name, setName] = useState('');
@@ -43,6 +52,39 @@ const Home = ({navigation}) => {
     getData();
   }, []);
 
+  const DATA = [
+    {
+      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+      title: 'First Item',
+    },
+    {
+      id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+      title: 'Second Item',
+    },
+    {
+      id: '58694a0f-3da1-471f-bd96-145571e29d72',
+      title: 'Third Item',
+    },
+  ];
+
+  const handleNotification = title => {
+    PushNotification.localNotification({
+      channelId: 'test-channel',
+      title: `Notification title:  ${title}`,
+      message: 'Notification message',
+    });
+  };
+
+  const renderItem = ({item}) => {
+    return (
+      <TouchableOpacity onPress={() => handleNotification(item.title)}>
+        <View>
+          <Text>{item.title}</Text>
+        </View>
+      </TouchableOpacity>
+    );
+  };
+
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Text>Welcome {name}!</Text>
@@ -53,6 +95,11 @@ const Home = ({navigation}) => {
         onChangeText={value => {
           setName(value);
         }}
+      />
+      <FlatList
+        data={DATA}
+        renderItem={renderItem}
+        keyExtractor={item => item.id}
       />
       <CustomButton title="Update" onPress={updateData} color="#ff7f00" />
       <CustomButton title="Remove" onPress={removeData} color="#f40100" />
