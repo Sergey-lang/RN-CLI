@@ -67,17 +67,30 @@ const Home = ({navigation}) => {
     },
   ];
 
-  const handleNotification = title => {
+  const handleNotification = (title, idx) => {
     PushNotification.localNotification({
       channelId: 'test-channel',
       title: `Notification title:  ${title}`,
-      message: 'Notification message',
+      message: 'Notification message ',
+      bigText:
+        title +
+        'some text here Notification message Notification message Notification message Notification message Notification message Notification message',
+      color: 'red',
+      id: idx,
+    });
+
+    PushNotification.localNotificationSchedule({
+      channelId: 'test-channel',
+      title: 'Alarm!!!',
+      message: 'Notification Schedule ',
+      date: new Date(Date.now() + 20 * 1000),
+      allowWhileIdle: true,
     });
   };
 
-  const renderItem = ({item}) => {
+  const renderItem = ({item, idx}) => {
     return (
-      <TouchableOpacity onPress={() => handleNotification(item.title)}>
+      <TouchableOpacity onPress={() => handleNotification(item.title, idx)}>
         <View>
           <Text>{item.title}</Text>
         </View>
