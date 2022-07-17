@@ -67,7 +67,7 @@ const Home = ({navigation}) => {
     },
   ];
 
-  const handleNotification = (title, idx) => {
+  const handleNotification = title => {
     PushNotification.localNotification({
       channelId: 'test-channel',
       title: `Notification title:  ${title}`,
@@ -76,7 +76,6 @@ const Home = ({navigation}) => {
         title +
         'some text here Notification message Notification message Notification message Notification message Notification message Notification message',
       color: 'red',
-      id: idx,
     });
 
     PushNotification.localNotificationSchedule({
