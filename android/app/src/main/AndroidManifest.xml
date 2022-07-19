@@ -24,6 +24,9 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
       </activity>
+        <meta-data
+                android:name="com.google.android.geo.API_KEY"
+                android:value="AIzaSyBpVHA-55YXUuxVQrOiwC1NvozfhvZ0hak"/>
         <meta-data  android:name="com.dieam.reactnativepushnotification.notification_foreground"
                     android:value="false"/>
         <meta-data  android:name="com.dieam.reactnativepushnotification.notification_color"
