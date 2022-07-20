@@ -111,6 +111,13 @@ const Home = ({navigation}) => {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Text>Welcome {name}!</Text>
+      <CustomButton
+        title="Open Camera"
+        onPress={() => {
+          navigation.navigate('Camera');
+        }}
+        color="#0080ff"
+      />
       <TextInput
         style={styles.input}
         placeholder="Enter your name"
