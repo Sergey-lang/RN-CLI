@@ -36,7 +36,7 @@
       </activity>
         <meta-data
                 android:name="com.google.android.geo.API_KEY"
-                android:value="AIzaSyBpVHA-55YXUuxVQrOiwC1NvozfhvZ0hak"/>
+                android:value="API KEY"/>
         <meta-data  android:name="com.dieam.reactnativepushnotification.notification_foreground"
                     android:value="false"/>
         <meta-data  android:name="com.dieam.reactnativepushnotification.notification_color"
