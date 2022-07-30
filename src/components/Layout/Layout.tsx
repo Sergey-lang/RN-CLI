@@ -1,4 +1,4 @@
-import {FC} from 'react';
+import React, {FC} from 'react';
 import {ScrollView, View} from 'react-native';
 import {useTailwind} from 'tailwind-rn';
 
@@ -7,7 +7,7 @@ interface ILayout {
   children: JSX.Element | JSX.Element[];
 }
 
-export const styleCenter = 'h-full w-full bg-white pt-16';
+export const styleCenter = 'h-full w-full bg-white pt-9';
 
 const Layout: FC<ILayout> = ({children, isScrollView = true}) => {
   const tw = useTailwind();

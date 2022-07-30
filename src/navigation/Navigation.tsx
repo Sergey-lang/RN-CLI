@@ -12,7 +12,7 @@ import Discount from '../screens/Discount/Discount';
 const Stack = createNativeStackNavigator();
 
 const Navigation: FC = () => {
-  const user = false;
+  const user = true;
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>

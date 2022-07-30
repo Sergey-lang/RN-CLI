@@ -16,6 +16,10 @@
   margin-top: 0.75rem
 }
 
+.mr-3 {
+  margin-right: 0.75rem
+}
+
 .flex {
   display: flex
 }
@@ -24,12 +28,36 @@
   height: 100%
 }
 
+.h-9 {
+  height: 2.25rem
+}
+
+.h-12 {
+  height: 3rem
+}
+
 .w-full {
   width: 100%
 }
 
 .w-9\/12 {
   width: 75%
+}
+
+.w-9 {
+  width: 2.25rem
+}
+
+.w-12 {
+  width: 3rem
+}
+
+.flex-row {
+  flex-direction: row
+}
+
+.items-end {
+  align-items: flex-end
 }
 
 .items-center {
@@ -48,6 +76,10 @@
   border-radius: 0.75rem
 }
 
+.rounded-full {
+  border-radius: 9999px
+}
+
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity))
@@ -63,6 +95,11 @@
   background-color: rgb(253 224 71 / var(--tw-bg-opacity))
 }
 
+.bg-gray-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity))
+}
+
 .p-3 {
   padding: 0.75rem
 }
@@ -72,8 +109,38 @@
   padding-bottom: 0.75rem
 }
 
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem
+}
+
 .pt-16 {
   padding-top: 4rem
+}
+
+.pt-10 {
+  padding-top: 2.5rem
+}
+
+.pt-14 {
+  padding-top: 3.5rem
+}
+
+.pt-12 {
+  padding-top: 3rem
+}
+
+.pt-11 {
+  padding-top: 2.75rem
+}
+
+.pt-9 {
+  padding-top: 2.25rem
 }
 
 .text-center {
@@ -94,13 +161,32 @@
   line-height: 1.25rem
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem
+}
+
 .font-bold {
   font-weight: 700
+}
+
+.font-medium {
+  font-weight: 500
 }
 
 .text-gray-800 {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity))
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity))
 }
 
 .opacity-30 {
