@@ -8,11 +8,12 @@ import Information from '../screens/Information/Information';
 import DiscountCards from '../screens/DiscountCards/DiscountCards';
 import Feedback from '../screens/Feedback/Feedback';
 import Discount from '../screens/Discount/Discount';
+import {useAuth} from '../hooks/useAuth';
 
 const Stack = createNativeStackNavigator();
 
 const Navigation: FC = () => {
-  const user = true;
+  const {user} = useAuth();
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>

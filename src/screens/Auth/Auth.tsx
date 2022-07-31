@@ -5,6 +5,8 @@ import {styleCenter} from '../../components/Layout/Layout';
 import Loader from '../../ui/Loader';
 import Field from '../../ui/Field';
 import Button from '../../ui/Button';
+import {useAuth} from '../../hooks/useAuth';
+import {login, register} from '../../../firebase';
 
 interface IData {
   email: string;
@@ -13,19 +15,17 @@ interface IData {
 
 const Auth: FC = () => {
   const tw = useTailwind();
-  const isLoading = false;
+  const {isLoading} = useAuth();
   const [data, setData] = useState<IData>({} as IData);
-  const [register, setRegister] = useState<boolean>(false);
-  const [login, setLogin] = useState<boolean>(false);
   const [isReg, setIsReg] = useState(false);
 
   const authHandler = async () => {
     const {email, password} = data;
     // Add await request to back-end
     if (isReg) {
-      setRegister(true);
+      await register(email, password);
     } else {
-      setLogin(true);
+      await login(email, password);
     }
 
     setData({} as IData);
