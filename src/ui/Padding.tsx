@@ -4,7 +4,7 @@ import {useTailwind} from 'tailwind-rn';
 
 type Padding = {
   children: JSX.Element | JSX.Element[];
-  style: object;
+  style?: object;
 };
 
 const Padding: FC<Padding> = ({children, style = {}}) => {
